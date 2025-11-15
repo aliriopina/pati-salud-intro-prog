@@ -19,7 +19,7 @@ La aplicación busca simular un sistema real de gestión médica, aplicando los 
 
 ## 🧩 Tecnologías Utilizadas
 - **Frontend:** HTML, CSS  
-- **Backend:** Lógica básica de programación (estructuras condicionales, ciclos, funciones, etc.)  
+- **Backend:** Lógica básica de programación en Java (estructuras condicionales, ciclos, funciones, etc.)  
 - **Control de versiones:** Git y GitHub  
 
 ---
