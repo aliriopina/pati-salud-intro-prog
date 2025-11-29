@@ -1,92 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pa ti' Salud - CRUD</title>
-    <link rel="icon" type="image/png" href="../images/pa-ti2.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../images/pa-ti2.jpg">
-</head>
-<body>
-<header>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <img src="../images/hrz.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>Pa'ti salud</h5>
-                    <p>Bienvenido al lugar donde tu sonrisa encuentra equilibrio.</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="../images/panoramica.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>Pa'ti salud</h5>
-                    <p>Profesionales que acompañan, no solo atienden.</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="../images/ortodoncia.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>Pa'ti salud</h5>
-                    <p>Combinamos ciencia, estética y calidez para cuidar cada detalle de tu sonrisa.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <nav class="navbar navbar-expand-lg bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../images/pa-ti2.jpg" alt="pa ti Icon" width="50" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="somos.html">¿Quiénes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="crud.html">CRUD</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="modelo.html">Modelo Entidad-Relación</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<pre><code>
 import java.util.Scanner;
 
-public class Main {
+public class Final {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -112,6 +26,7 @@ public class Main {
             System.out.println("2. Paciente");
             System.out.println("3. Salir");
             opcionMenu = sc.nextInt();
+            sc.nextLine(); // limpiar buffer
 
             switch (opcionMenu) {
 
@@ -120,9 +35,9 @@ public class Main {
 
                     System.out.println("Ingresa las credenciales de administrador");
                     System.out.println("Ingresa el usuario");
-                    usuario = sc.next();
+                    usuario = sc.nextLine();
                     System.out.println("Ingresa la contraseña");
-                    contra = sc.next();
+                    contra = sc.nextLine();
 
                     if (usuario.equals("admin") && contra.equals("admin")) {
 
@@ -142,29 +57,31 @@ public class Main {
                             System.out.println("10. Salir del sistema");
 
                             int opcion = sc.nextInt();
+                            sc.nextLine();
 
                             switch (opcion) {
 
                                 // REGISTRAR PACIENTE
                                 case 1 -> {
                                     System.out.println("Ingresa el nombre del paciente");
-                                    String nombre = sc.next();
+                                    String nombre = sc.nextLine();
                                     System.out.println("Ingresa el apellido del paciente");
-                                    String apellido = sc.next();
+                                    String apellido = sc.nextLine();
                                     System.out.println("Ingresa la edad del paciente");
                                     int edad = sc.nextInt();
+                                    sc.nextLine();
                                     System.out.println("Ingresa el documento del paciente");
-                                    String documentoPaciente = sc.next();
+                                    String documentoPaciente = sc.nextLine();
                                     System.out.println("Ingresa el sexo del paciente (F o M)");
-                                    char sexo = sc.next().charAt(0);
+                                    char sexo = sc.nextLine().charAt(0);
                                     System.out.println("Ingresa el peso del paciente en kilogramos");
                                     int peso = sc.nextInt();
+                                    sc.nextLine();
                                     System.out.println("Ingresa la eps que tiene el paciente");
-                                    String eps = sc.next();
+                                    String eps = sc.nextLine();
 
-                                    pacientes[itPacientes] =
-                                            nombre + " " + apellido + ", " + edad + ", " +
-                                                    documentoPaciente + ", " + sexo + ", " + peso + ", " + eps;
+                                    pacientes[itPacientes] = nombre + " " + apellido + ", " + edad + ", " +
+                                            documentoPaciente + ", " + sexo + ", " + peso + ", " + eps;
 
                                     itPacientes++;
 
@@ -174,18 +91,17 @@ public class Main {
                                 // REGISTRAR MÉDICO
                                 case 2 -> {
                                     System.out.println("Ingresa el nombre del médico");
-                                    String nombre = sc.next();
+                                    String nombre = sc.nextLine();
                                     System.out.println("Ingresa el apellido del médico");
-                                    String apellido = sc.next();
+                                    String apellido = sc.nextLine();
                                     System.out.println("Ingresa el documento del médico");
-                                    String documentoMedico = sc.next();
+                                    String documentoMedico = sc.nextLine();
                                     System.out.println("Ingresa el sexo del usuario (F o M)");
-                                    char sexo = sc.next().charAt(0);
+                                    char sexo = sc.nextLine().charAt(0);
                                     System.out.println("Ingresa la especialización del médico");
-                                    String especializacion = sc.next();
+                                    String especializacion = sc.nextLine();
 
-                                    medicos[itMedicos] =
-                                            nombre + " " + apellido + ", " + documentoMedico + ", " + sexo + ", " + especializacion;
+                                    medicos[itMedicos] = nombre + " " + apellido + ", " + documentoMedico + ", " + sexo + ", " + especializacion;
 
                                     itMedicos++;
 
@@ -201,37 +117,34 @@ public class Main {
                                     } else {
 
                                         System.out.println("Ingresa la fecha de la cita (DD-MM-AAAA)");
-                                        String fechaCita = sc.next();
+                                        String fechaCita = sc.nextLine();
                                         System.out.println("Ingresa la hora de la cita HH:MM");
-                                        String horaCita = sc.next();
+                                        String horaCita = sc.nextLine();
                                         System.out.println("Ingresa el documento del paciente");
-                                        String documentoPaciente = sc.next();
+                                        String documentoPaciente = sc.nextLine();
                                         System.out.println("Ingresa el documento del médico");
-                                        String documentoMedico = sc.next();
+                                        String documentoMedico = sc.nextLine();
 
                                         String pacienteSeleccionado = "";
                                         String medicoSeleccionado = "";
 
-                                        for (String p : pacientes) {
-                                            if (p == null) break;
-                                            if (p.contains(documentoPaciente)) {
-                                                pacienteSeleccionado = p;
+                                        for (int i = 0; i < itPacientes; i++) {
+                                            if (pacientes[i] != null && pacientes[i].contains(documentoPaciente)) {
+                                                pacienteSeleccionado = pacientes[i];
                                                 break;
                                             }
                                         }
 
-                                        for (String m : medicos) {
-                                            if (m == null) break;
-                                            if (m.contains(documentoMedico)) {
-                                                medicoSeleccionado = m;
+                                        for (int i = 0; i < itMedicos; i++) {
+                                            if (medicos[i] != null && medicos[i].contains(documentoMedico)) {
+                                                medicoSeleccionado = medicos[i];
                                                 break;
                                             }
                                         }
 
                                         consultas[itConsulta] =
                                                 "IdConsulta: AB" + itConsulta + ", " + fechaCita + ", " + horaCita +
-                                                        ", " + pacienteSeleccionado +
-                                                        ", " + medicoSeleccionado;
+                                                        ", " + pacienteSeleccionado + ", " + medicoSeleccionado;
 
                                         itConsulta++;
 
@@ -245,35 +158,30 @@ public class Main {
                                     if (itPacientes == 0) {
                                         System.out.println("No hay pacientes registrados");
                                     } else {
-                                        for (String p : pacientes) {
-                                            if (p == null) break;
-                                            System.out.println(p);
+                                        for (int i = 0; i < itPacientes; i++) {
+                                            System.out.println(pacientes[i]);
                                         }
                                     }
                                 }
-
 
                                 // VER MÉDICOS
                                 case 5 -> {
                                     if (itMedicos == 0) {
                                         System.out.println("No hay médicos registrados");
                                     } else {
-                                        for (String m : medicos) {
-                                            if (m == null) break;
-                                            System.out.println(m);
+                                        for (int i = 0; i < itMedicos; i++) {
+                                            System.out.println(medicos[i]);
                                         }
                                     }
                                 }
-
 
                                 // VER CONSULTAS
                                 case 6 -> {
                                     if (itConsulta == 0) {
                                         System.out.println("No hay consultas registradas");
                                     } else {
-                                        for (String c : consultas) {
-                                            if (c == null) break;
-                                            System.out.println(c);
+                                        for (int i = 0; i < itConsulta; i++) {
+                                            System.out.println(consultas[i]);
                                         }
                                     }
                                 }
@@ -285,14 +193,12 @@ public class Main {
                                     } else {
 
                                         System.out.println("Ingresa el documento del paciente a eliminar:");
-                                        String documentoPaciente = sc.next();
+                                        String documentoPaciente = sc.nextLine();
 
                                         boolean existe = false;
 
-                                        for (int i = 0; i < pacientes.length; i++) {
-                                            if (pacientes[i] == null) break;
-
-                                            if (pacientes[i].contains(documentoPaciente)) {
+                                        for (int i = 0; i < itPacientes; i++) {
+                                            if (pacientes[i] != null && pacientes[i].contains(documentoPaciente)) {
                                                 pacientes[i] = "- Paciente eliminado";
                                                 System.out.println("El paciente ha sido eliminado");
                                                 existe = true;
@@ -304,7 +210,6 @@ public class Main {
                                     }
                                 }
 
-
                                 // ELIMINAR MÉDICO
                                 case 8 -> {
                                     if (itMedicos == 0) {
@@ -312,14 +217,12 @@ public class Main {
                                     } else {
 
                                         System.out.println("Ingresa el documento del médico a eliminar:");
-                                        String documentoMedico = sc.next();
+                                        String documentoMedico = sc.nextLine();
 
                                         boolean existe = false;
 
-                                        for (int i = 0; i < medicos.length; i++) {
-                                            if (medicos[i] == null) break;
-
-                                            if (medicos[i].contains(documentoMedico)) {
+                                        for (int i = 0; i < itMedicos; i++) {
+                                            if (medicos[i] != null && medicos[i].contains(documentoMedico)) {
                                                 medicos[i] = "- Médico eliminado";
                                                 System.out.println("El médico ha sido eliminado");
                                                 existe = true;
@@ -338,14 +241,12 @@ public class Main {
                                     } else {
 
                                         System.out.println("Ingresa el ID de la consulta (AB#):");
-                                        String idConsulta = sc.next();
+                                        String idConsulta = sc.nextLine();
 
                                         boolean existe = false;
 
-                                        for (int i = 0; i < consultas.length; i++) {
-                                            if (consultas[i] == null) break;
-
-                                            if (consultas[i].contains(idConsulta)) {
+                                        for (int i = 0; i < itConsulta; i++) {
+                                            if (consultas[i] != null && consultas[i].contains(idConsulta)) {
                                                 consultas[i] = "- Consulta eliminada";
                                                 System.out.println("La consulta ha sido eliminada");
                                                 existe = true;
@@ -380,7 +281,7 @@ public class Main {
 
                     System.out.println("Bienvenido al portal de pacientes");
                     System.out.println("Ingresa tu documento:");
-                    String documentoPaciente = sc.next();
+                    String documentoPaciente = sc.nextLine();
 
                     do {
                         System.out.println("Selecciona una opción:");
@@ -390,6 +291,7 @@ public class Main {
                         System.out.println("4. Salir");
 
                         int opcionPaciente = sc.nextInt();
+                        sc.nextLine();
 
                         switch (opcionPaciente) {
 
@@ -397,9 +299,8 @@ public class Main {
                                 if (itMedicos == 0) {
                                     System.out.println("No hay médicos registrados");
                                 } else {
-                                    for (String m : medicos) {
-                                        if (m == null) break;
-                                        System.out.println(m);
+                                    for (int i = 0; i < itMedicos; i++) {
+                                        System.out.println(medicos[i]);
                                     }
                                 }
                             }
@@ -408,9 +309,8 @@ public class Main {
                                 if (itConsulta == 0) {
                                     System.out.println("No hay consultas registradas");
                                 } else {
-                                    for (String c : consultas) {
-                                        if (c == null) break;
-                                        System.out.println(c);
+                                    for (int i = 0; i < itConsulta; i++) {
+                                        System.out.println(consultas[i]);
                                     }
                                 }
                             }
@@ -419,11 +319,9 @@ public class Main {
                                 boolean existe = false;
                                 System.out.println("Tus citas pendientes:");
 
-                                for (String c : consultas) {
-                                    if (c == null) break;
-
-                                    if (c.contains(documentoPaciente)) {
-                                        System.out.println(c);
+                                for (int i = 0; i < itConsulta; i++) {
+                                    if (consultas[i] != null && consultas[i].contains(documentoPaciente)) {
+                                        System.out.println(consultas[i]);
                                         existe = true;
                                     }
                                 }
@@ -442,7 +340,7 @@ public class Main {
                     } while (estadoPaciente);
 
                 } // fin case 2 paciente
-                
+
                 case 3 -> {
                     System.out.println("Gracias por utilizar nuestro sistema");
                     estadoMenu = false;
@@ -455,98 +353,3 @@ public class Main {
 
     }
 }
-</code></pre>
-
-
-<footer>
-
-    <div class="card text-center mt-4">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item"><a class="nav-link" href="#footer1">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#footer2">Benefits</a></li>
-                <li class="nav-item"><a class="nav-link" href="#footer3">Contáctanos</a></li>
-            </ul>
-        </div>
-
-        <div class="card-body">
-
-            <!-- FOOTER 1 -->
-            <div id="footer1" class="tab-content">
-                <div class="footer1">
-                    <h4>Menú rápido</h4>
-
-                    <div class="menu-links">
-                        <a href="../index.html">Inicio</a>
-                        <span>·</span>
-                        <a href="servicios.html">Servicios</a>
-                        <span>·</span>
-                        <a href="somos.html">Sobre nosotros</a>
-                    </div>
-
-                    <p class="mt-3"><em>Cuidamos tu sonrisa con calidad y compromiso.</em></p>
-
-                    <div class="social-icons mt-3">
-                        <i class="bi bi-facebook"></i>
-                        <i class="bi bi-instagram"></i>
-                        <i class="bi bi-whatsapp"></i>
-                    </div>
-
-                    <p class="mt-3">© 2025 — Todos los derechos reservados.</p>
-                </div>
-            </div>
-
-            <!-- FOOTER 2 -->
-            <div id="footer2" class="tab-content">
-                <div class="footer2">
-                    <h4>¿Por qué elegirnos?</h4>
-
-                    <div class="row justify-content-center mt-3">
-                        <div class="col-5 benefit-card">🦷 Atención segura y confiable</div>
-                        <div class="col-5 benefit-card">⏱ Citas oportunas sin esperas largas</div>
-                        <div class="col-5 benefit-card">🤝 Trato cálido y personalizado</div>
-                        <div class="col-5 benefit-card">🧪 Tecnología moderna a tu servicio</div>
-                    </div>
-
-                    <p class="mt-3"><em>Creando experiencias positivas desde el primer día.</em></p>
-
-                    <a href="#" class="btn btn-outline-primary mt-2">Conoce nuestra clínica →</a>
-                </div>
-            </div>
-
-            <!-- FOOTER 3 -->
-            <div id="footer3" class="tab-content">
-                <div class="footer3">
-                <h4>Contacto rápido</h4>
-
-                    <p>☎ Llamar ahora<br><span>(604) 255 45 25</span></p>
-
-                    <p>📅 <a href="formulario.html" class="footer3-link">Agenda tu cita</a></p>
-
-                    <p>
-                    📍 Cómo llegar<br>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Carrera+42+%2348-20,+Medellín" 
-                    target="_blank">
-                    Carrera 42 #48-20, Medellín
-                    </a>
-                    </p>
-
-                    <p class="links-footer">Links útiles:</p>
-
-                    <p class="links-footer1">
-                    <a href="../PolìticasInstitucionales-Pa`tiSalud.pdf"
-                    download="Politicas-PatiSalud.pdf"
-                    class="link-politicas">Políticas</a>
-                    · Preguntas frecuentes · Soporte
-                    </p>
-
-                    <p class="mt-2">Horario: Lunes a Viernes · 8am - 6pm</p>
-            </div>
-        </div>                 
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-</html>

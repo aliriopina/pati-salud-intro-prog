@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 40px 10px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+.imagFondo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.form-container {
+    background: rgba(255, 255, 255, 0.85);
+    max-width: 550px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+}
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #003b63;
+    margin-bottom: 20px;
+}
+label {
+    font-size: 14px;
+    color: #003b63;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+button {
+    width: 100%;
+    padding: 14px;
+    background: #0077d9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+button:hover {
+    background: #005fae;
+}
+
+/*Respuesta*/
+body#answer {
+    background: #aaebf7;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+}
+
+.box {
+    background: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2d6cdf;
+}

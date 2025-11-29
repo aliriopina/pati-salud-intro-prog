@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/formularioRespuesta.css">
+    <title>Agenda tu cita</title>
+</head>
+
+<body>
+
+    <img src="../images/muelitas.jpg" class="imagFondo" alt="fondo">
+
+    <div class="form-container">
+        <h2>Agenda tu cita</h2>
+
+        <form action="respuesta.html" method="GET">
+            
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Apellidos:</label>
+            <input type="text" name="apellidos" required>
+
+            <label>Tipo de documento:</label>
+            <select name="tipo_documento" required>
+                <option value="">Seleccione...</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+            </select>
+
+            <label>Número de documento:</label>
+            <input type="text" name="numero_documento" required>
+
+            <label>Número de teléfono:</label>
+            <input type="text" name="telefono" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" name="correo" required>
+
+            <button type="submit">Enviar formulario</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
+
